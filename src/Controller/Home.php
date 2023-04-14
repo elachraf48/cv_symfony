@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Controller;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+$request = Request::createFromGlobals();
 
 class Home extends AbstractController {
      /**
@@ -37,7 +41,7 @@ class Home extends AbstractController {
     /**
      * @Route("/home",name="post_home")
      */
-  
+ 
     public function home()
     {
         // return new Response(
@@ -46,10 +50,19 @@ class Home extends AbstractController {
         return $this->render('home.html.twig');
     }
     /**
+     * @Route("/download", name="download_file")
+    **/
+    public function downloadFileAction(){
+        $response = new BinaryFileResponse('../public/assets/cv-achraf.pdf');
+        $response->setContentDisposition(ResponseHeaderBag::DISPOSITION_ATTACHMENT,'cv-achraf.pdf');
+        return $response;
+    }
+    /**
      * @Route("/about",name="post_about")
      */
     public function about()
     {
+        
         // return new Response(
         //     'add post'
         // );
@@ -106,10 +119,25 @@ class Home extends AbstractController {
         return $this->render('blog.html.twig');
     }
     /**
-     * @Route("/contact",name="post_contact")
+     * @Route("/contact1",name="post_contact1")
      */
-    public function contact()
+    public function contact1(Request $request)
     {
+        // $form=$this->createForm(contactType::class);
+        // $form->handleRequest($request);
+        // if($form->isSubmitted() && $form->isValid()){
+            
+        //     $data = $form->getData();
+        //     $address - $data['email'];
+        //     $content - $data['content'];
+        //     $email - (new Email())
+        //             ->from($address)
+        //             ->to('admin@admin. com')
+        //             ->subject( 'Demande de contact')
+        //             ->text($content);
+           
+
+        // }
         // return new Response(
         //     'add post'
         // );

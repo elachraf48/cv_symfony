@@ -18,8 +18,8 @@
         {% block javascripts %}
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
             {# {{ encore_entry_script_tags('app') }} #}
-            {# <link href="{{ asset('css/utiliy.css') }}" rel="stylesheet"/> #}
-            <script >
+            <script src="{{ asset('js/script.js') }}" ></script>
+            {# <script >
             const navBtn = document.querySelector('#navbar-toggler');
             const navDiv = document.querySelector('.navbar-collapse');
 
@@ -36,7 +36,7 @@
                     document.body.classList.remove('resize-animation-stopper');
                 }, 400);
             });
-            </script>
+            </script> #}
         {% endblock %}
     </head>
     <body>
@@ -76,7 +76,7 @@
               <a href = "{{path('post_blog')}}" class = "nav-link">blog</a>
             </li>
             <li class = "nav-item nav-active">
-              <a href = "{{path('post_contact')}}" class = "nav-link">contact</a>
+              <a href = "{{path('post_contact1')}}" class = "nav-link">contact</a>
             </li>
           </ul>
         </div>
@@ -112,7 +112,7 @@
               <i class = "fas fa-long-arrow-alt-right"></i>
               services
             </a>
-            <a href = "{{path('post_contact')}}" class = "text">
+            <a href = "{{path('post_contact1')}}" class = "text">
               <i class = "fas fa-long-arrow-alt-right"></i>
               contact
             </a>

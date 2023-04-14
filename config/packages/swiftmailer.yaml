@@ -1,0 +1,7 @@
+swiftmailer:
+    transport: gmail
+    username: YOUR_GMAIL_USERNAME
+    password: YOUR_GMAIL_PASSWORD
+    host: smtp.gmail.com
+    port: 465
+    encryption: ssl
